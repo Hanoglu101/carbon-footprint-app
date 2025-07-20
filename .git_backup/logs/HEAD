@@ -1,0 +1,13 @@
+0000000000000000000000000000000000000000 0795fe10e868e3f64007dc49418d2e48d4a169a9 Nihan Hanoğlu <nihanhanoglu@192.168.1.5> 1753017622 +0300	commit (initial): Initial project upload
+0795fe10e868e3f64007dc49418d2e48d4a169a9 df2ae7d815c5b738c034d3e8c2e5f3295b7d82cf Nihan Hanoğlu <nihanhanoglu@192.168.1.5> 1753018833 +0300	commit (merge): Merge git commit --no-edit
+df2ae7d815c5b738c034d3e8c2e5f3295b7d82cf ee5ee5c7978307657d691eec205c77d2eb102dc8 Nihan Hanoğlu <nihanhanoglu@192.168.1.5> 1753019475 +0300	commit: Remove .env from repo and add it to .gitignore
+ee5ee5c7978307657d691eec205c77d2eb102dc8 df2ae7d815c5b738c034d3e8c2e5f3295b7d82cf Nihan Hanoğlu <nihanhanoglu@192.168.1.5> 1753019571 +0300	reset: moving to HEAD~1
+df2ae7d815c5b738c034d3e8c2e5f3295b7d82cf b02b6f81fcd93ea24f1779c5a6e2fd02ae695678 Nihan Hanoğlu <nihanhanoglu@192.168.1.5> 1753019622 +0300	commit: Remove .env from version control
+b02b6f81fcd93ea24f1779c5a6e2fd02ae695678 df2ae7d815c5b738c034d3e8c2e5f3295b7d82cf Nihan Hanoğlu <nihanhanoglu@192.168.1.5> 1753019685 +0300	reset: moving to HEAD~1
+df2ae7d815c5b738c034d3e8c2e5f3295b7d82cf 9360a049a932da7733f96b4d8aedfe0fe990b880 Nihan Hanoğlu <nihanhanoglu@192.168.1.5> 1753019733 +0300	commit: Remove .env file to protect API key
+9360a049a932da7733f96b4d8aedfe0fe990b880 df2ae7d815c5b738c034d3e8c2e5f3295b7d82cf Nihan Hanoğlu <nihanhanoglu@192.168.1.5> 1753019803 +0300	reset: moving to HEAD~1
+df2ae7d815c5b738c034d3e8c2e5f3295b7d82cf e89c0d7fbbe54b1cd6c2601e07c2ec60d74218a1 Nihan Hanoğlu <nihanhanoglu@192.168.1.5> 1753019842 +0300	commit: Remove .env and sensitive key from commit history
+e89c0d7fbbe54b1cd6c2601e07c2ec60d74218a1 df2ae7d815c5b738c034d3e8c2e5f3295b7d82cf Nihan Hanoğlu <nihanhanoglu@192.168.1.5> 1753019932 +0300	reset: moving to HEAD~1
+df2ae7d815c5b738c034d3e8c2e5f3295b7d82cf 33aeb1f31bc2be5dd4f9d583b2df2e0abde1ad20 Nihan Hanoğlu <nihanhanoglu@192.168.1.5> 1753019961 +0300	commit: Remove .env and secret key from commit history
+33aeb1f31bc2be5dd4f9d583b2df2e0abde1ad20 b4908dc496a51bede93746efe484bd00068164fd Nihan Hanoğlu <nihanhanoglu@192.168.1.5> 1753020204 +0300	commit: Remove .env from history
+b4908dc496a51bede93746efe484bd00068164fd 12c5e30d9f6576127770ed52318317df93ee967b Nihan Hanoğlu <nihanhanoglu@192.168.1.5> 1753020693 +0300	commit: Add .env to .gitignore
