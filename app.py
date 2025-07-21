@@ -49,7 +49,7 @@ authenticator = stauth.Authenticate(
 )
 
 # 🧾 Giriş ekranı
-login_info = authenticator.login("Giriş ekranı", "main")
+login_info = authenticator.login("Giriş ekranı", location="main")
 
 if login_info is not None:
     name, authentication_status, username = login_info
