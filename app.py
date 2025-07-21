@@ -23,7 +23,7 @@ user_credentials = {}
 for user in users:
     user_credentials[user.email] = {
         'name': user.name,
-        'password': user.password  # hashed şifre!
+        'password': user.password
     }
 
 config = {
@@ -49,7 +49,19 @@ authenticator = stauth.Authenticate(
 )
 
 # 🧾 Giriş ekranı
-name, authentication_status, username = authenticator.login('main')
+login_info = authenticator.login("Giriş ekranı", "main")
+
+if login_info is not None:
+    name, authentication_status, username = login_info
+
+    if authentication_status:
+        st.sidebar.success(f"Hoş geldin, {name} 👋")
+    elif authentication_status is False:
+        st.sidebar.error("Kullanıcı adı veya şifre yanlış")
+    elif authentication_status is None:
+        st.sidebar.warning("Lütfen giriş yapın")
+else:
+    st.sidebar.error("Kimlik doğrulama başlatılamadı.")
 
 if authentication_status:
     st.sidebar.success(f"Hoş geldin, {name} 👋")
