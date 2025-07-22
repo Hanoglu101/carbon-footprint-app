@@ -1,54 +1,54 @@
 import streamlit as st
-import streamlit_authenticator as stauth
+from streamlit_authenticator import Authenticate
 from database import session
-from models import Project, ActivityData, EmissionFactor, User
+from database import Project, ActivityData, EmissionFactor, User
 from datetime import datetime
 import matplotlib.pyplot as plt
 import pandas as pd
+import numpy as np
 import io
-import openai
 import os
+
 from dotenv import load_dotenv
 
 st.set_page_config(page_title="Karbon Ayak İzi Uygulaması", layout="centered")
 
-# 🌍 API Anahtarını yükle
+# 🔐 API anahtarını yükle
 load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai_api_key = os.getenv("OPENAI_API_KEY")
 
-# 🔐 Dinamik kullanıcı yapılandırması
+# 👥 Dinamik kullanıcı yapılandırması
 users = session.query(User).all()
 user_credentials = {}
-
 for user in users:
     user_credentials[user.email] = {
-        'name': user.name,
-        'password': user.password
+        "name": user.name,
+        "password": user.password
     }
 
 config = {
-    'credentials': {
-        'usernames': user_credentials
+    "credentials": {
+        "usernames": user_credentials
     },
-    'cookie': {
-        'name': 'karbonai_cookie',
-        'key': 'random_signature_key',
-        'expiry_days': 30
+    "cookie": {
+        "name": "karbonai_cookie",
+        "key": "random_signature_key",
+        "expiry_days": 30
     },
-    'preauthorized': {
-        'emails': [u.email for u in users]
+    "preauthorized": {
+        "emails": [u.email for u in users]
     }
 }
 
-# 🧠 Giriş sistemini başlat
-authenticator = stauth.Authenticate(
+# 🔐 Giriş sistemini başlat
+authenticator = Authenticate(
     config['credentials'],
     config['cookie']['name'],
     config['cookie']['key'],
     config['cookie']['expiry_days']
 )
 
-# 🧾 Giriş ekranı
+# 👋 Giriş ekranı
 login_info = authenticator.login(form_name="Giriş ekranı", location="sidebar")
 
 if login_info is not None:
@@ -59,7 +59,7 @@ if login_info is not None:
     elif authentication_status is False:
         st.sidebar.error("Kullanıcı adı veya şifre yanlış")
     elif authentication_status is None:
-        st.sidebar.warning("Lütfen giriş yapın")
+        st.sidebar.warning("Giriş yapınız.")
 else:
     st.sidebar.error("Kimlik doğrulama başlatılamadı.")
 
