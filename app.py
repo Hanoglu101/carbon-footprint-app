@@ -72,6 +72,10 @@ if authentication_status:
     # Giriş yapan kullanıcıyı al
     logged_in_user = session.query(User).filter_by(email=username).first()
 
+    if not logged_in_user:
+        st.error("Kullanıcı bilgisi alınamadı. Lütfen tekrar giriş yapın.")
+        st.stop()
+
     # ➕ Proje Oluşturma
     st.header("📦 Proje Oluştur")
     with st.form("project_form"):

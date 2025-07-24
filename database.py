@@ -10,7 +10,7 @@ Base = declarative_base()
 
 # Kullanıcı Modeli
 class User(Base):
-    _tablename_ = 'users'
+    __tablename__ = 'users'
     id = Column(Integer, primary_key=True)
     name = Column(String)
     email = Column(String, unique=True)
@@ -18,7 +18,7 @@ class User(Base):
 
 # Proje Modeli
 class Project(Base):
-    _tablename_ = 'projects'
+    __tablename__ = 'projects'
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer, ForeignKey('users.id'))
     name = Column(String)
@@ -27,7 +27,7 @@ class Project(Base):
 
 # Faaliyet Verisi Modeli
 class ActivityData(Base):
-    _tablename_ = 'activity_data'
+    __tablename__ = 'activity_data'
     id = Column(Integer, primary_key=True)
     project_id = Column(Integer, ForeignKey('projects.id'))
     activity_type = Column(String)
@@ -40,8 +40,12 @@ class ActivityData(Base):
 
 # Emisyon Katsayısı Modeli
 class EmissionFactor(Base):
-    _tablename_ = 'emission_factors'
+    __tablename__ = "emission_factors"
+
     id = Column(Integer, primary_key=True)
+    category = Column(String)
     activity_type = Column(String)
+    emission_factor = Column(Float)
+    unit = Column(String)
     unit = Column(String)
     factor = Column(Float)
