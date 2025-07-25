@@ -64,11 +64,12 @@ else:
     st.sidebar.error("Kimlik doğrulama başlatılamadı.")
 
 if authentication_status:
+    st.session_state["username"] = username  # <<< BUNU EKLE!
     st.sidebar.success(f"Hoş geldin, {name} 👋")
     authenticator.logout('Çıkış Yap', 'sidebar')
 
     st.title("🌱 Karbon Ayak İzi Hesaplama Uygulaması")
-
+    
     # Giriş yapan kullanıcıyı al
     logged_in_user = session.query(User).filter_by(email=username).first()
 
