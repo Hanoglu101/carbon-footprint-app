@@ -25,6 +25,7 @@ for user in users:
         "name": user.name,
         "password": user.password
     }
+st.write(user_credentials)
 
 config = {
     "credentials": {
